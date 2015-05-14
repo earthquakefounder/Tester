@@ -11,9 +11,10 @@ export module Testing {
 		}
 	})
 	
-	export class Tester {
-		constructor(testFn: (...args : any[]) => any) {
-			
-		}
+	export interface IShouldable {
+		shouldBe: function(...args: any[])
+	}
+	export function Tester(testFn: (...args : any[]) => any) {
+		
 	}
 }
