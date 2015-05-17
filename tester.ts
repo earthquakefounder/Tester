@@ -122,7 +122,7 @@ module Testing {
 		
 		shouldThrowException(text? : string) {
 			return this.check(() => {
-				return this.result instanceof Array && (!text || this.result.message === text);
+				return this.result instanceof Error && (!text || this.result.message === text);
 			}, 'Expected a thrown exception');
 		}
 		

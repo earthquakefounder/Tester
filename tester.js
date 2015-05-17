@@ -152,7 +152,7 @@ var Testing;
         Result.prototype.shouldThrowException = function (text) {
             var _this = this;
             return this.check(function () {
-                return _this.result instanceof Array && (!text || _this.result.message === text);
+                return _this.result instanceof Error && (!text || _this.result.message === text);
             }, 'Expected a thrown exception');
         };
 
