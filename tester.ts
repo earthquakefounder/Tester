@@ -56,7 +56,11 @@ module Testing {
 			var result = new Result(this.$test, inputs);
 			
 			setTimeout(() => {
-				result.result = this.fn.apply(context || window, inputs);
+				try {
+					result.result = this.fn.apply(context || window, inputs);
+				} catch(ex) {
+					result.result = ex;
+				}
 			})
 			return result;
 		}
